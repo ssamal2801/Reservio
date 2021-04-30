@@ -1,0 +1,32 @@
+﻿<Window x:Class="Reservio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Reservio"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d" Title="Reservio - Home" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+
+    <Grid>
+        
+
+        <Image HorizontalAlignment="Left" Height="600" Margin="0" VerticalAlignment="Top" Width="1024" Source="./Assets/reservio-splash-page-background.jpg" Stretch="Fill" Grid.RowSpan="2"/>
+        <Button Name="RegisterButton" Margin="90,360,814,176" Grid.Row="1" Background="White" BorderBrush="White" Click="registerRedirect" RenderTransformOrigin="3.18,0.574" Width="120" Height="30" Foreground="#FF9B3327">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock HorizontalAlignment="Center" Text="Register" FontFamily="Calibri Light" Margin="0,0,-0.5,0" Grid.RowSpan="2" Foreground="#FF30527F"/>
+            </Grid>
+        </Button>
+        <Button Name="LoginButton" Margin="227,360,677,176" Grid.Row="1" Background="White" BorderBrush="White" Click="loginRedirect" RenderTransformOrigin="3.18,0.574" Width="120" Height="30" Foreground="#FF9B3327">
+            <Grid>
+                <TextBlock HorizontalAlignment="Center" Text="Login" FontFamily="Calibri Light" Foreground="#FF30527F"/>
+            </Grid>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="100,202,0,0" TextWrapping="Wrap" Text="RESERVIO" VerticalAlignment="Top" Foreground="White" FontSize="48" FontFamily="Segoe UI Black"/>
+        <TextBlock HorizontalAlignment="Left" Margin="110,274,0,0" TextWrapping="Wrap" Text="Bookings Made Easy!" VerticalAlignment="Top" Foreground="White" FontFamily="Calibri Light" FontSize="25"/>
+    </Grid>
+</Window>

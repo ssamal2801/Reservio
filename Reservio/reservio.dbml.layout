@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="reservio">
+  <DataContextMoniker Name="/reservioDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f08ee411-b3ea-40d5-bd32-959469e17d34" absoluteBounds="3.875, 1.375, 2, 2.5401025390625">
+      <DataClassMoniker Name="/reservioDataContext/Booking" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f72ff61e-1e2a-439d-a524-d809f3d5f1f8" absoluteBounds="3.89, 1.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5260347a-7c61-40db-baab-0b6a86b7dd53" absoluteBounds="0.625, 2, 2, 1.9631982421875">
+      <DataClassMoniker Name="/reservioDataContext/Registration" />
+      <nestedChildShapes>
+        <elementListCompartment Id="713b3af8-d159-4e51-af00-1c3770a060ad" absoluteBounds="0.64000000000000012, 2.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

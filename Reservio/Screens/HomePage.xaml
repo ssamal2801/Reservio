@@ -1,0 +1,131 @@
+﻿<Window x:Class="Reservio.Screens.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Reservio.Screens"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d" Title="Booking" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.Column="1" Grid.Row="1" Background="#FFE6E2E2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="327*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="85*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="NoResults">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="145*"/>
+                    <ColumnDefinition Width="182*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="../Assets/reservio-background.jpeg" Stretch="Fill" Margin="0,0,-170,0" Width="824" Grid.ColumnSpan="2"/>
+            </Grid>
+            <Grid x:Name="TableResults" Visibility="Hidden">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Reservation Details" VerticalAlignment="Center" Margin="319,39,0,509" Width="156" TextAlignment="Center" FontSize="16"/>
+                <Label Content="Table #" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,116,0,0"/>
+                <Label Content="Customer Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,166,0,0"/>
+                <Label Content="Email ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,216,0,0"/>
+                <Label Content="Contact Number" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,266,0,0"/>
+                <Label Content="Count" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,316,0,0"/>
+
+                <TextBox x:Name="TableNumber" HorizontalAlignment="Left" Height="23" Margin="457,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Grid.ColumnSpan="4" IsReadOnly = "True"/>
+                <TextBox x:Name="CustomerName" HorizontalAlignment="Left" Height="23" Margin="457,166,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Grid.ColumnSpan="4"/>
+                <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="457,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Grid.ColumnSpan="4"/>
+                <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="457,266,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Grid.ColumnSpan="4"/>
+                <TextBox x:Name="Count" HorizontalAlignment="Left" Height="23" Margin="457,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Grid.ColumnSpan="4"/>
+
+                <Button Name="PreviousButton" Margin="158,395,376,145" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="FetchPreviousTable" Width="120" Height="30">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center" Text="Previous" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+                <Button Name="NextButton" Margin="300,395,234,145" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="FetchNextTable" Width="120" Height="30">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center" Text="Next" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+                <Button Name="SaveButton" Margin="446,395,88,145" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="SaveBooking" RenderTransformOrigin="3.18,0.574" Width="120" Height="30">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center" Text="Save" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+                <Button Name="CancelButton" Margin="589,395,-55,145" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="CancelBooking" RenderTransformOrigin="3.18,0.574" Width="120" Height="30">
+                    <Grid>
+                        <TextBlock HorizontalAlignment="Center" Text="Cancel" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="22*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="LightGray" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
+            </Grid.Effect>
+
+            <Grid Background="White" Grid.ColumnSpan="2">
+                <TextBlock Text="RESERVIO" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Calibri Light" Foreground="#FFBC96EA" FontSize="16"/>
+            </Grid>
+
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+
+                <Label Content="Pick a Date" Margin="10" />
+                <DatePicker x:Name="SearchDate" Margin="10" />
+
+                <Label Content="Pick a Time" Margin="10" />
+                <ComboBox Name="Time" Margin="10">
+                    <ComboBoxItem>1.00 PM - 3.00 PM</ComboBoxItem>
+                    <ComboBoxItem>3.00 PM - 5.00 PM</ComboBoxItem>
+                    <ComboBoxItem>7.00 PM - 9.00 PM</ComboBoxItem>
+                    <ComboBoxItem>9.00 PM - 11.00 PM</ComboBoxItem>
+                </ComboBox>
+
+                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="SearchTable">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="Magnify" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="CheckText" HorizontalAlignment="Center" Text="Check" FontFamily="Champagne &amp; Limousines"/>
+                    </Grid>
+                </Button>
+
+
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="SpecialActions" Grid.ColumnSpan="2" Background="#FF8522BD" MouseDown="SpecialActions_MouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                <Button Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White">
+                    <materialDesign:PackIcon Kind="Bell"/>
+                </Button>
+                <Button x:Name="ButtonFechar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Click="Logout">
+                    <materialDesign:PackIcon Kind="Power"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

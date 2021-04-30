@@ -1,0 +1,35 @@
+﻿<Window x:Class="Reservio.Views.RegistrationPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Reservio.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        mc:Ignorable="d" Title="Registration" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid>
+        <Rectangle Fill="#FF973426" HorizontalAlignment="Left" Height="28" Stroke="Black" VerticalAlignment="Top" Width="1024"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="267,160,0,0" VerticalAlignment="Top" Height="39" Width="124" FontSize="18" FontFamily="Calibri Light"/>
+        <Label Content="Contact" HorizontalAlignment="Left" Margin="267,210,0,0" VerticalAlignment="Top" Height="44" Width="124" FontSize="18" FontFamily="Calibri Light"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="267,260,0,0" VerticalAlignment="Top" Height="44" Width="124" FontSize="18" FontFamily="Calibri Light"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="267,310,0,0" VerticalAlignment="Top" Height="44" Width="124" FontSize="18" FontFamily="Calibri Light"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="267,360,0,0" VerticalAlignment="Top" Height="44" Width="124" FontSize="18" FontFamily="Calibri Light"/>
+
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="39" Margin="446,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox x:Name="Contact" HorizontalAlignment="Left" Height="39" Margin="446,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox x:Name="Address" HorizontalAlignment="Left" Height="39" Margin="446,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="39" Margin="446,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="354"/>
+        <PasswordBox x:Name="Password" HorizontalAlignment="Left" Height="39" Margin="446,350,0,0" VerticalAlignment="Top" Width="354"/>
+
+        <Button Name="RegisterButton"  HorizontalAlignment="Left" Margin="446,452,0,0" VerticalAlignment="Top" Background="#FF973426" BorderBrush="#FF973426" Foreground="White" FontSize="20" Click="MakeRegistration" RenderTransformOrigin="3.18,0.574" Width="120" Height="30">
+            <Grid>
+                <TextBlock HorizontalAlignment="Center" Text="Register" FontFamily="Calibri Light" Height="22" Margin="0,0,0.5,0" VerticalAlignment="Top" FontSize="16" />
+            </Grid>
+        </Button>
+        <Button Name="cancelButton"  HorizontalAlignment="Left" Margin="597,452,0,0" VerticalAlignment="Top" Background="#FF973426" BorderBrush="#FF973426" Foreground="White" FontSize="20" Click="CancelRegistration" RenderTransformOrigin="3.18,0.574" Width="120" Height="30">
+            <Grid>
+                <TextBlock HorizontalAlignment="Center" Text="Cancel" FontFamily="Calibri Light" FontSize="16" />
+            </Grid>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="460,69,0,0" TextWrapping="Wrap" Text="Register" VerticalAlignment="Top" FontSize="36" FontFamily="Calibri Light"/>
+    </Grid>
+</Window>
